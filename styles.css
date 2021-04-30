@@ -37,6 +37,7 @@ button.close{ /*For Modal Close*/
 
 .modal-body .card, .modal-body .card img{
     width: 100%;
+    margin-top:5px;
 } 
 
 .card-title{
@@ -54,6 +55,11 @@ button.close{ /*For Modal Close*/
     font-size: 23.7px;
 }
 
+.card-img-top {
+    width: 100%;
+    height: 15vw !important;
+}
+
 /* .horizontal-line{
     border-top: 2px dashed #2d3192;
 } */
@@ -61,7 +67,7 @@ button.close{ /*For Modal Close*/
 /* Free Pickup and Drop for Mobile and Tablet View */
 .free-pickup-mobile-view{
     display: none;
-    background-color: #ec1f24;
+    background-color: white;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -69,8 +75,8 @@ button.close{ /*For Modal Close*/
     -webkit-animation: zoominout 2s infinite;
 }
 .free-pickup-mobile-view a{
-    /* font-weight: bold; */
-    color: white;
+    font-weight: 600;
+    color: #ec1f24;
     text-decoration: none;
 }
 .free-pickup-mobile-view a i{
@@ -98,7 +104,7 @@ button.close{ /*For Modal Close*/
     background-color: #ec1f24;
 }
 
-.navbar-toggler .iconbar{
+.navbar-toggler .fa-bars,.navbar-toggler .fa-times{
     color: white;
     display: block;
     width: 25px;
@@ -204,6 +210,22 @@ button.close{ /*For Modal Close*/
     font-weight: 600;
 }
 
+.expertise-row2{
+    justify-content: center;
+}
+
+.expertise-row1 .card-img-top, .expertise-row2 .card-img-top {
+    object-fit: cover;
+}
+
+.expertise .modal .card-img-top, .team-row .card-img-top, .team .modal .card-img-top{
+    object-fit: contain;
+}
+
+.tenpxmargin{
+    margin-top:10px;
+}
+
 /* Customers */
 .customers .card .card-text{
     font-style: italic;
@@ -214,17 +236,14 @@ button.close{ /*For Modal Close*/
     font-weight: 600;
 }
 
-.b2bcustomers .row{
+.cars-serviced-and-happy-customers .row{
     text-align: center;
 }
 
-.b2bcustomers .row img{
-    width: 50%;
-}
-.b2bcustomers .row p{
+.cars-serviced-and-happy-customers .counter{
+    font-size: 70px;
+    font-weight:600;
     color: #ec1f24;
-    font-weight: 600;
-    margin-top: 10px;
 }
 
 /* FAQs */
@@ -316,6 +335,10 @@ button.close{ /*For Modal Close*/
     h4{
         font-size: 1.25rem !important;
     }
+    .card-img-top {
+        width: 100%;
+        height: auto !important;
+    }
     /* Free Pickup and Drop */
     .free-pickup-mobile-view{
         display: block;
@@ -345,8 +368,12 @@ button.close{ /*For Modal Close*/
     .team-row .card,
     .customers-row1 .card,
     .customers-row2 .card,
-    .b2bcustomersrow1{
+    .b2bcustomersrow1,
+    .cars-serviced-and-happy-customers .col-lg-6{
         margin-top: 20px;
+    }
+    .tenpxmargin{
+        margin-top:0px;
     }
 
     /* Customers */
@@ -458,6 +485,9 @@ button.close{ /*For Modal Close*/
     } */
     .row .card{
         height: 93%;
+    }
+    .customers .card{
+        height: auto !important;
     }    
     .row{
         margin-top: 0px;
@@ -498,7 +528,9 @@ button.close{ /*For Modal Close*/
     .row .card{
         height: 93%;
     }
-    
+    .customers .card{
+        height: auto !important;
+    }
     .row{
         margin-top: 0px;
     }

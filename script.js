@@ -8,13 +8,13 @@ $("#nav-faq").click(function(){
 
 //Owl Carousel
 $('.owl-carousel').owlCarousel({
-    loop:false,
+    loop:true,
     margin:10,
     nav:true,
     startPosition: 0,
-    // autoplay:true,	
-    // autoplayTimeout:3000,
-    // autoplayHoverPause:true,
+    autoplay:true,	
+    autoplayTimeout:3000,
+    autoplayHoverPause:true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
@@ -37,29 +37,39 @@ lightbox.option({
     'fitImagesInViewport':true,
     'imageFadeDuration':100
   })
+  
 
+/*Count Animation - Happy CUstomers & No. of cars serviced */
+var a = 0;
+$(window).scroll(function() {
 
+  var oTop = $('.cars-serviced-and-happy-customers').offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() > oTop) {
 
-// $('.navbar-nav>li> .dropdown-menu').on('hover', function(){
-//     $('.dropdown-toggle').css('color','blue');
-// });
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // The lower the slower
 
-// $('.navbar-nav li .dropdown-menu').hover(
-//     function(){
-//         $('.dropdown-toggle').css("background-color", "white");
-//         $('.dropdown-toggle').css("color", "#2d3192");
-//         }, function(){
-//         $('.dropdown-toggle').css("background-color", "#2d3192");
-//         $('.dropdown-toggle').css("color", "white");
-//       }
-// )
+    counters.forEach(counter => {
+	    const updateCount = () => {
+		    const target = +counter.getAttribute('data-target');
+		    const count = +counter.innerText;
 
-// $('.navbar-nav li').hover(
-//     function(){
-//         $(this).css("background-color", "white");
-//         $(this).css("color", "#2d3192");
-//         }, function(){
-//         $(this).css("background-color", "#2d3192");
-//         $(this).css("color", "white");
-//       }
-// )
+		// Lower inc to slow and higher to slow
+		    const inc = target / speed;
+
+		// Check if target is reached
+		    if (count < target) {
+			// Add inc to count and output in counter
+			    counter.innerText = count + inc;
+			// Call function every ms
+			    setTimeout(updateCount, 1);
+		    } else {
+			    counter.innerText = target + '+';
+		    }
+	    };
+	    updateCount();
+    });
+    a = 1;
+  }
+
+});
