@@ -314,7 +314,7 @@ button.close{ /*For Modal Close*/
     transform: rotate(30deg);
     transform-origin: 100% 0%;
     width:25%;
-    height: 50%;
+    height: 48%;
   }
   
   .speed-20 span {
@@ -327,7 +327,7 @@ button.close{ /*For Modal Close*/
     transform: rotate(60deg);
     transform-origin: 100% 0%;
     width:37%;
-    height: 47%;
+    height: 45%;
   }
   .speed-40 span {
     transform: rotate(-60deg);
